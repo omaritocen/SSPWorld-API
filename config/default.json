@@ -3,7 +3,8 @@
         "url": "mongodb://localhost:27017/sspworld",
         "options": {
             "useUnifiedTopology": true,
-            "useNewUrlParser": true
+            "useNewUrlParser": true,
+            "useFindAndModify": false
         }
     }
 }
