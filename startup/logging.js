@@ -7,5 +7,5 @@ module.exports = function() {
     process.on('unhandledRejection', (ex) => {
         throw ex;
     });
-
+// TODO: CHECK IF EXCEPTIONS ARE LOGGED
 }

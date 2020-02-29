@@ -4,7 +4,9 @@
         "options": {
             "useUnifiedTopology": true,
             "useNewUrlParser": true,
-            "useFindAndModify": false
+            "useFindAndModify": false,
+            "useCreateIndex": true
         }
-    }
+    },
+    "jwtPrivateKey": "h4ntC&DfEJdy@m^D"
 }
