@@ -28,6 +28,12 @@ const userSchema = new mongoose.Schema({
         required: true,
         min: 5,
         max: 1024
+    },
+    role: {
+        type: String,
+        required: true,
+        enum: ['student', 'repre', 'ta', 'admin'],
+        default: 'student'
     }
 });
 
@@ -53,9 +59,8 @@ userSchema.statics.validateLogin = (user) => {
 userSchema.methods.generateAuthToken = function() {
     const user = this;
     const secret = config.get('jwtPrivateKey');
-    // TODO: ROLE TO BE ADDED
     // TODO: CHANGE THE JWT PRIVATE KEY AND MAKE IT MORE SECURE
-    const token = jwt.sign({ _id: user._id}, secret);
+    const token = jwt.sign({ _id: user._id, role: user.role }, secret);
     return token;
 }
 

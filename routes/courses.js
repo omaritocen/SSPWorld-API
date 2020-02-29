@@ -5,14 +5,16 @@ const router = express.Router();
 
 const Course = require('../models/course');
 const courseService = require('../services/courseService');
+const auth = require('../middleware/auth');
+const admin = require('../middleware/admin');
 const {isValidObjectId} = require('mongoose');
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     const courses = await courseService.getCourses();
     res.send(courses);
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
     const id = req.params.id;
     if (!isValidObjectId(id)) return res.status(400).send('Invalid ID');
 
@@ -22,7 +24,7 @@ router.get('/:id', async (req, res) => {
     res.send(course);
 });
 
-router.post('/', async (req, res) => {
+router.post('/', [auth, admin], async (req, res) => {
     const {error} = Course.validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     let course = new Course(_.pick(req.body, ['name', 'creditHours', 'courseType', 'term']));
@@ -30,7 +32,7 @@ router.post('/', async (req, res) => {
     res.status(201).send(course);
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id',[auth, admin], async (req, res) => {
     const id = req.params.id;
     if (!isValidObjectId(id)) return res.status(400).send('Invalid ID');
 
@@ -45,7 +47,7 @@ router.put('/:id', async (req, res) => {
     res.send(course);
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', [auth, admin], async (req, res) => {
     const id = req.params.id;
     if (!isValidObjectId(id)) return res.status(400).send('Invalid ID');
 
