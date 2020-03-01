@@ -12,3 +12,14 @@
 {"message":"Uninitialized link schema","level":"error","service":"user-service"}
 {"message":"Student validation failed: _userId: Path `_userId` is required.","level":"error","service":"user-service"}
 {"message":"Assignment to constant variable.","level":"error","service":"user-service"}
+{"message":"Unexpected string in JSON at position 54","level":"error","service":"user-service"}
+{"message":"_ is not defined","level":"error","service":"user-service"}
+{"message":"Cannot set property '_userId' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot set property '_userId' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot set property '_userId' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot set property '_userId' of undefined","level":"error","service":"user-service"}
+{"message":"Update validation failed: deadline: Path `deadline` is required., body: Path `body` is required., title: Path `title` is required., _courseId: Path `_courseId` is required.","level":"error","service":"user-service"}
+{"message":"Cannot set property '_userId' of undefined","level":"error","service":"user-service"}
+{"message":"Update validation failed: deadline: Path `deadline` is required., body: Path `body` is required., title: Path `title` is required., _courseId: Path `_courseId` is required.","level":"error","service":"user-service"}
+{"message":"Update validation failed: deadline: Path `deadline` is required., body: Path `body` is required., title: Path `title` is required., _courseId: Path `_courseId` is required.","level":"error","service":"user-service"}
+{"message":"userId is not defined","level":"error","service":"user-service"}
