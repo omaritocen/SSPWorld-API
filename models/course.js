@@ -31,8 +31,8 @@ courseSchema.statics.validate = function(body) {
     const schema = Joi.object({
         name: Joi.string().required().min(5).max(255),
         creditHours: Joi.number().required().min(1).max(5),
-        courseType: Joi.string().required(),
-        term: Joi.string().required()
+        courseType: Joi.string().valid('Core', 'Elective', 'Humanity').required(),
+        term: Joi.string().valid('First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth', 'Tenth').required()
     });
 
     return schema.validate(body);

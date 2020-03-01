@@ -6,6 +6,8 @@ const router = express.Router();
 const User = require('../models/user');
 const userService = require('../services/userService');
 
+// A REQUEST MAY BE SENT TO CREATE STUDENT PROFILE
+
 router.post('/', async (req, res) => {
     const {error} = User.validateRegisteration(req.body);
     if (error) return res.status(400).send(error.details[0].message);
