@@ -23,3 +23,7 @@
 {"message":"Update validation failed: deadline: Path `deadline` is required., body: Path `body` is required., title: Path `title` is required., _courseId: Path `_courseId` is required.","level":"error","service":"user-service"}
 {"message":"Update validation failed: deadline: Path `deadline` is required., body: Path `body` is required., title: Path `title` is required., _courseId: Path `_courseId` is required.","level":"error","service":"user-service"}
 {"message":"userId is not defined","level":"error","service":"user-service"}
+{"message":"Enrollment.validateEnrollment is not a function","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}

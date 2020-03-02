@@ -12,6 +12,11 @@ const getUpdatesByCourseId = async(id) => {
     return updates;
 }
 
+const getUpdatesByCoursesIds = async (ids) => {
+    const updates = await Update.find({_courseId: {$in: ids}}).sort('-deadline');
+    return updates;
+}
+
 const saveUpdate = async (update) => {
     update = await update.save();
     return update;
@@ -30,6 +35,7 @@ const updateUpdate = async (id, body) => {
 module.exports = {
     getUpdate,
     getUpdatesByCourseId,
+    getUpdatesByCoursesIds,
     deleteUpdate,
     updateUpdate,
     saveUpdate

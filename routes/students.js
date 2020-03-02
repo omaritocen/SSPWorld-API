@@ -19,6 +19,13 @@ router.get('/:id', auth, async (req, res) => {
     res.send(student);
 });
 
+router.get('/',auth, async (req, res) => {
+    const userId = req.user._id;
+    const studentProfile = await studentService.alreadyHasProfile(userId);
+    if (!studentProfile) return res.status(404).send('No student profile is found for this user id');
+    res.send(studentProfile);
+});
+
 router.post('/', auth, async (req, res) => {
     const userId = req.user._id;
     req.body._userId = userId;

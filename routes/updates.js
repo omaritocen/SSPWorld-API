@@ -6,11 +6,12 @@ const router = express.Router();
 const Update = require('../models/update');
 const updateService = require('../services/updateService');
 const courseService = require('../services/courseService');
+const studentService = require('../services/studentService');
+const enrollmentService = require('../services/enrollmentService');
 const auth = require('../middleware/auth');
 const announcer = require('../middleware/announcer');
 const {isValidObjectId} = require('mongoose');
 
-// TODO: ADD A METHOD TO GET ALL UPDATES FOR ENROLLED USERS IN COURSE // INCLUDE PAGINATION
 // TODO: WHOLE PROJECT DOUBLE CALLS TO DATABASE, RETHINK ABOUT BUSSNIESS LOGIC HIREACHY
 
 router.get('/:id', auth, async (req, res) => {
@@ -26,6 +27,31 @@ router.get('/:id', auth, async (req, res) => {
     res.send(update);
 });
 
+// MAYBE IT SHOULD BE AUTO GOTTEN FROM USERID
+
+router.get('/getUpdatesByStudentId/:id', auth, async (req, res) => {
+    const studentId = req.params.id;
+    const userId = req.user._id;
+
+    const studentProfile = await studentService.alreadyHasProfile(userId);
+    if (!studentProfile) return res.status(400).send('User does not have a student profile.');
+
+    if (studentProfile._id.toString() !== studentId)
+        return res.status(401).send('Access Denied');
+
+    const enrollments = await enrollmentService.getEnrollmentsByStudentId(studentId);
+    if (!enrollments) return res.status(404).send('User is not enrolled in any course');
+
+    const coursesIds = enrollments.map(a => a._courseId);
+    const updates = await updateService.getUpdatesByCoursesIds(coursesIds);
+
+    if (!updates) return res.status(404).send('No updates found for this student');
+
+    res.send(updates);
+    
+});
+
+// TODO: CHANGE THE ROUTE
 router.get('/getUpdatesByCourseId/:id', auth, async (req, res) => {
     const courseId = req.params.id;
 
