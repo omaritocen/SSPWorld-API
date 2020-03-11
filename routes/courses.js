@@ -5,12 +5,29 @@ const router = express.Router();
 
 const Course = require('../models/course');
 const courseService = require('../services/courseService');
+const studentService = require('../services/studentService');
+const enrollmentService = require('../services/enrollmentService');
 const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
 const {isValidObjectId} = require('mongoose');
 
 router.get('/', auth, async (req, res) => {
     const courses = await courseService.getCourses();
+    res.send(courses);
+});
+
+router.get('/getEnrolledCourses', auth, async (req, res) => {
+    const userId = req.user._id;
+
+    const student = await studentService.alreadyHasProfile(userId);
+    if (!student) return res.status(400).send('User does not have a student profile');
+
+    const enrollments = await enrollmentService.getEnrollmentsByStudentId(student._id);
+    if (!enrollments) return res.send([]); // Debatable if an empty array or a bad request should be sent;
+
+    const coursesIds = enrollments.map(e => e._courseId);
+    const courses = await courseService.getMultipleCourses(coursesIds);
+
     res.send(courses);
 });
 

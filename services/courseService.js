@@ -12,6 +12,11 @@ const getCourse = async (id) => {
     return course;
 }
 
+const getMultipleCourses = async (ids) => {
+    const courses = await Course.find({_id: {$in: ids}});
+    return courses;
+}
+
 const saveCourse = async (course) => {
     course = await course.save();
     return course;
@@ -30,6 +35,7 @@ const deleteCourse = async (id) => {
 module.exports = {
     getCourses,
     getCourse,
+    getMultipleCourses,
     saveCourse,
     updateCourse,
     deleteCourse

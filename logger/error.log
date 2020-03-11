@@ -27,3 +27,8 @@
 {"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
 {"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
 {"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
