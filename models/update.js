@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Joi = require('@hapi/joi');
-Joi.objectId = require('joi-objectid');
+Joi.objectId = require('joi-objectid')(Joi);
 
 const updateSchema = new mongoose.Schema({
     _courseId: {

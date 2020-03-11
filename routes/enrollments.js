@@ -6,6 +6,7 @@ const router = express.Router();
 const Enrollment = require('../models/enrollment');
 const enrollmentService = require('../services/enrollmentService');
 const studentService = require('../services/studentService');
+const courseService = require('../services/courseService');
 const auth = require('../middleware/auth');
 const {isValidObjectId} = require('mongoose');
 
@@ -18,10 +19,9 @@ router.post('/', auth, async (req, res) => {
     const studentProfile = await studentService.alreadyHasProfile(userId);
     if (!studentProfile) return res.status(400).send('User does not have a student profile.');
 
-    if (studentProfile._id.toString() !== req.body._studentId)
-        return res.status(401).send('Access Denied');
+    let enrollment = new Enrollment(_.pick(req.body, ['_courseId']));
+    enrollment._studentId = studentProfile._id;
     
-    let enrollment = new Enrollment(_.pick(req.body, ['_studentId', '_courseId']));
     enrollment = await enrollmentService.saveEnrollment(enrollment);
     res.status(201).send(enrollment);
 });
@@ -40,6 +40,22 @@ router.get('/getEnrollmentsByStudentId/:id',auth, async (req, res) => {
     if (!enrollments) return res.status(404).send('No enrollments found for this student');
 
     res.send(enrollments);
+});
+
+router.delete('/deleteByCourseId/:courseId', auth, async (req, res) => {
+    const courseId = req.params.courseId;
+    const userId = req.user._id;
+
+    const course = await courseService.getCourse(courseId);
+    if (!course) return res.status(400).send('No course with this id is found');
+
+    const studentProfile = await studentService.alreadyHasProfile(userId);
+    if (!studentProfile) return res.status(400).send('User does not have a student profile.');
+
+    const enrollment = await enrollmentService.deleteEnrollmentByCourseId(studentProfile._id, courseId);
+    if (!enrollment) return res.status(404).send('No enrollment for this student with this course id');
+
+    res.send(enrollment);
 });
 
 router.delete('/:id', auth, async (req, res) => {

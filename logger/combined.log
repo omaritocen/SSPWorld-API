@@ -147,3 +147,28 @@
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
 {"message":"studentId is not defined","level":"error","service":"user-service"}
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Joi.required(...).objectId is not a function","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}

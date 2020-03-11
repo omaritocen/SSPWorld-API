@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Joi = require('@hapi/joi');
-Joi.ObjectId = require('joi-objectid');
+Joi.objectId = require('joi-objectid')(Joi);
 
 const enrollmentSchema = new mongoose.Schema({
     _studentId: {
@@ -14,8 +14,8 @@ const enrollmentSchema = new mongoose.Schema({
 });
 
 enrollmentSchema.statics.validateEnrollment = (body) => {
+
     const schema = Joi.object({
-        _studentId: Joi.objectId().required(),
         _courseId: Joi.objectId().required()
     });
 
