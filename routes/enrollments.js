@@ -42,6 +42,22 @@ router.get('/getEnrollmentsByStudentId/:id',auth, async (req, res) => {
     res.send(enrollments);
 });
 
+router.get('/isEnrolled/:courseId', auth, async (req, res) => {
+    const courseId = req.params.courseId;
+    const userId = req.user._id;
+
+    const course = await courseService.getCourse(courseId);
+    if (!course) return res.status(400).send('No course with this id is found');
+
+    const studentProfile = await studentService.alreadyHasProfile(userId);
+    if (!studentProfile) return res.status(400).send('User does not have a student profile.');
+
+    const enrollment = await enrollmentService.isEnrolled(studentProfile._id, courseId);
+    if (!enrollment) return res.status(404).send('No enrollment for this student with this course id');
+
+    res.send(enrollment);
+});
+
 router.delete('/deleteByCourseId/:courseId', auth, async (req, res) => {
     const courseId = req.params.courseId;
     const userId = req.user._id;

@@ -28,10 +28,16 @@ const deleteEnrollmentByCourseId = async (studentId, courseId) => {
     return enrollment;
 }
 
+const isEnrolled = async (studentId, courseId) => {
+    const enrollment = await Enrollment.findOne({ _courseId: courseId, _studentId: studentId });
+    return enrollment;  
+}
+
 module.exports = {
     getEnrollment,
     getEnrollmentsByStudentId,
     saveEnrollment,
     deleteEnrollment,
-    deleteEnrollmentByCourseId
+    deleteEnrollmentByCourseId,
+    isEnrolled
 }
