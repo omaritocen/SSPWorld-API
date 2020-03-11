@@ -143,3 +143,7 @@
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"studentId is not defined","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}

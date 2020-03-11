@@ -14,6 +14,24 @@ const {isValidObjectId} = require('mongoose');
 
 // TODO: WHOLE PROJECT DOUBLE CALLS TO DATABASE, RETHINK ABOUT BUSSNIESS LOGIC HIREACHY
 
+router.get('/getStudentUpdates', auth, async (req, res) => {
+    const userId = req.user._id;
+
+    const studentProfile = await studentService.alreadyHasProfile(userId);
+    if (!studentProfile) return res.status(400).send('User does not have a student profile.');
+
+    const enrollments = await enrollmentService.getEnrollmentsByStudentId(studentProfile._id);
+    if (!enrollments) return res.status(404).send('User is not enrolled in any course');
+
+    const coursesIds = enrollments.map(a => a._courseId);
+    const updates = await updateService.getUpdatesByCoursesIds(coursesIds);
+
+    if (!updates) return res.status(404).send('No updates found for this student');
+
+    res.send(updates);
+    
+});
+
 router.get('/:id', auth, async (req, res) => {
     const id = req.params.id;
 
@@ -25,30 +43,6 @@ router.get('/:id', auth, async (req, res) => {
         return res.status(404).send('No update with this ID is found');
 
     res.send(update);
-});
-
-// MAYBE IT SHOULD BE AUTO GOTTEN FROM USERID
-
-router.get('/getUpdatesByStudentId/:id', auth, async (req, res) => {
-    const studentId = req.params.id;
-    const userId = req.user._id;
-
-    const studentProfile = await studentService.alreadyHasProfile(userId);
-    if (!studentProfile) return res.status(400).send('User does not have a student profile.');
-
-    if (studentProfile._id.toString() !== studentId)
-        return res.status(401).send('Access Denied');
-
-    const enrollments = await enrollmentService.getEnrollmentsByStudentId(studentId);
-    if (!enrollments) return res.status(404).send('User is not enrolled in any course');
-
-    const coursesIds = enrollments.map(a => a._courseId);
-    const updates = await updateService.getUpdatesByCoursesIds(coursesIds);
-
-    if (!updates) return res.status(404).send('No updates found for this student');
-
-    res.send(updates);
-    
 });
 
 // TODO: CHANGE THE ROUTE
