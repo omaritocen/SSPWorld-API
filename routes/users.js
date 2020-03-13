@@ -10,13 +10,13 @@ const userService = require('../services/userService');
 
 router.post('/', async (req, res) => {
     const {error} = User.validateRegisteration(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) return res.status(400).send({error: error.details[0].message});
 
     let user = await userService.userExists(req.body.email);
-    if (user) return res.status(400).send('A User with the same email already exists.');
+    if (user) return res.status(400).send({error: 'A User with the same email already exists.'});
 
     user = await userService.idExists(req.body.sspID);
-    if (user) return res.status(400).send('A User with the same SSP ID already exists.');
+    if (user) return res.status(400).send({error: 'A User with the same SSP ID already exists.'});
 
     user = new User(_.pick(req.body, ['email', 'sspID', 'password']));
     user = await userService.registerUser(user);

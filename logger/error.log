@@ -44,3 +44,6 @@
 {"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
 {"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
 {"message":"you must pass Joi as an argument","level":"error","service":"user-service"}
+{"message":"unsupported charset \"UTF-8\"","level":"error","service":"user-service"}
+{"message":"unsupported charset \"UTF-8\"","level":"error","service":"user-service"}
+{"message":"body is not defined","level":"error","service":"user-service"}

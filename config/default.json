@@ -1,6 +1,7 @@
 {
     "mongoDB": {
         "url": "mongodb://localhost:27017/sspworld",
+        "testUrl": "mongodb://localhost:27017/sspworldTest",
         "options": {
             "useUnifiedTopology": true,
             "useNewUrlParser": true,

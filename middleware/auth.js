@@ -10,7 +10,7 @@ module.exports = function (req, res, next) {
         next();
     }
     catch (ex) {
-        res.status(401).send('Invalid token');
+        return res.status(401).send({error: 'Invalid Token'});
     }
 
 }
