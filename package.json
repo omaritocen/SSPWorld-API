@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && jest --testTimeout=5000 --forceExit"
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha tests/**/*.test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^17.1.0",
+    "@types/jest": "^25.1.4",
     "bcrypt": "^4.0.0",
     "chai": "^4.2.0",
     "config": "^3.3.0",
@@ -23,13 +24,8 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "jest": "^25.1.0",
+    "expect": "^25.1.0",
+    "mocha": "^7.1.0",
     "supertest": "^4.0.2"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ]
   }
 }

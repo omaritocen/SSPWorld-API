@@ -1,16 +1,17 @@
 const request = require('supertest');
 const {ObjectID} = require('mongodb');
 const _ = require('lodash');
+const expect = require('expect');
 
 const app = require('../../index');
 
 const url = '/api/courses/';
 
 const Course = require('../../models/course');
-const {courses, populateCourses, users} = require('../seed/seed');
+const {courses, populateCourses, users} = require('../seed/courseSeed');
 
 beforeEach(populateCourses);
-afterAll(async done => {
+after(async done => {
     done();
 });
 
@@ -25,7 +26,7 @@ describe('/api/courses/', () => {
                 .set('x-auth-token', users[0].token);
                 
             expect(res.statusCode).toEqual(200);
-            expect(res.body.length).toBe(2); 
+            expect(res.body.length).toEqual(2); 
         });
 
         it('should not return courses without access token', async () => {

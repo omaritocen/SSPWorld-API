@@ -41,7 +41,8 @@ userSchema.statics.validateRegisteration = (user) => {
     const Schema = Joi.object({
         email: Joi.string().email().required(),
         sspID: Joi.number().integer().required().min(1).max(20000),
-        password: Joi.string().required().min(6).max(50)
+        password: Joi.string().required().min(6).max(50),
+        confirmPassword: Joi.string().min(6).max(50)
     });
 
     return Schema.validate(user);
