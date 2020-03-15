@@ -10,7 +10,7 @@ const users = [{
 }, {
     email: "example123@example.com",
     sspID: 5300,
-    password: 'boom123',
+    password: '$2b$10$Y1k5v0m.vFOUDkc49JxmFOXcsO6XIU.gXVmMnruRfUzG2s9K4IlrG',  // example123,
     role: 'student'
 }]; 
 
