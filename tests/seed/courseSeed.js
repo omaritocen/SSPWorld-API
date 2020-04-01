@@ -1,23 +1,6 @@
 const {ObjectID} = require('mongodb');
-const jwt = require('jsonwebtoken');
-const config = require('config');
-
-const userOneId = new ObjectID();
-const userTwoId = new ObjectID();
 
 const Course = require('../../models/course');
-
-const users = [{
-    _id: userOneId,
-    email: 'fares@example.com',
-    password: 'userOnePass',
-    token: jwt.sign({_id: userOneId, role: 'student'}, config.get('jwtPrivateKey'))
-}, {
-    _id: userTwoId,
-    email: 'jen@example.com',
-    password: 'userTwoPass',
-    token: jwt.sign({_id: userOneId, role: 'admin'}, config.get('jwtPrivateKey'))
-}];
 
 const courses = [{
     _id: new ObjectID(),
@@ -42,6 +25,5 @@ const populateCourses = function(done) {
 
 module.exports = {
     courses,
-    users,
     populateCourses
 }

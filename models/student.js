@@ -40,7 +40,7 @@ studentSchema.statics.validateStudent = (body) => {
         _userId: Joi.objectId().required(),
         firstName: Joi.string().required().min(3).max(15),
         lastName: Joi.string().required().min(3).max(15),
-        image: Joi.string(),
+        image: Joi.string().optional().allow(''),
         year: Joi.string().required().valid('Prep', 'First', 'Second', 'Third', 'Senior'),
         department: Joi.string().required().valid('General', 'CCE', 'EME', 'CAE', 'BME', 'GPE', 'OCE')
     });

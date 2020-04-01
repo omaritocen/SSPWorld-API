@@ -36,11 +36,11 @@ router.get('/:id', auth, async (req, res) => {
     const id = req.params.id;
 
     if (!isValidObjectId(id))
-        return res.status(400).send('Invalid ID');
+        return res.status(400).send({error: 'Invalid ID'});
     
     let update = await updateService.getUpdate(id);
     if (!update)
-        return res.status(404).send('No update with this ID is found');
+        return res.status(404).send({error: 'No update with this ID is found'});
 
     res.send(update);
 });

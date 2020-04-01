@@ -11,6 +11,16 @@ const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
 const {isValidObjectId} = require('mongoose');
 
+router.get('/getCourseByCourseName', auth , async (req, res) => {
+    const courseName = req.query.courseName;
+
+    const course = await courseService.getCourseByCourseName(courseName);
+    if (!course) return res.status(404).send({error: 'No course with this name is found'});
+
+    res.send(course);
+});
+
+
 router.get('/', auth, async (req, res) => {
     const courses = await courseService.getCourses();
     res.send(courses);

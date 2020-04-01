@@ -8,7 +8,8 @@ const app = require('../../index');
 const url = '/api/courses/';
 
 const Course = require('../../models/course');
-const {courses, populateCourses, users} = require('../seed/courseSeed');
+const {courses, populateCourses} = require('../seed/courseSeed');
+const {users} = require('../seed/mockedUsersSeed');
 
 beforeEach(populateCourses);
 after(async done => {
@@ -76,6 +77,22 @@ describe('/api/courses/', () => {
             
             expect(res.statusCode).toEqual(404);
             expect(res.body.error).toBe('No course with this ID is found.');  
+        });
+    });
+
+    describe('GET /getCourseByCourseName', () => {
+        const subUrl = 'getCourseByCourseName';
+        it('should return the course if course name is sent', async() => {
+            const name = courses[0].name;
+            const requestUrl = url + subUrl;
+            const res = await request(app)
+                .get(requestUrl)
+                .query({courseName: name})
+                .set('x-auth-token', users[0].token);
+                
+
+            expect(res.statusCode).toEqual(200);
+            expect(res.body).toMatchObject(_.omit(courses[0], ['_id'])); 
         });
     });
 
