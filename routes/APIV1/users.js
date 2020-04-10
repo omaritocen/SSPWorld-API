@@ -3,8 +3,8 @@ const _ = require('lodash');
 
 const router = express.Router();
 
-const User = require('../models/user');
-const userService = require('../services/userService');
+const User = require('../../models/user');
+const userService = require('../../services/userService');
 
 // A REQUEST MAY BE SENT TO CREATE STUDENT PROFILE
 

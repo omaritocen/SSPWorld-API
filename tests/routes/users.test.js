@@ -7,7 +7,7 @@ const app = require('../../index');
 
 const {populateUsers, users} = require('../seed/userSeed');
 
-const url = '/api/users/';
+const url = '/api/v1/users/';
 const User = require('../../models/user');
 
 beforeEach(populateUsers);

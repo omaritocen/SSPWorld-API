@@ -5,7 +5,7 @@ const expect = require('expect');
 
 const app = require('../../index');
 
-const url = '/api/courses/';
+const url = '/api/v1/courses/';
 
 const Course = require('../../models/course');
 const {courses, populateCourses} = require('../seed/courseSeed');

@@ -3,13 +3,13 @@ const _ = require('lodash');
 
 const router = express.Router();
 
-const Update = require('../models/update');
-const updateService = require('../services/updateService');
-const courseService = require('../services/courseService');
-const studentService = require('../services/studentService');
-const enrollmentService = require('../services/enrollmentService');
-const auth = require('../middleware/auth');
-const announcer = require('../middleware/announcer');
+const Update = require('../../models/update');
+const updateService = require('../../services/updateService');
+const courseService = require('../../services/courseService');
+const studentService = require('../../services/studentService');
+const enrollmentService = require('../../services/enrollmentService');
+const auth = require('../../middleware/auth');
+const announcer = require('../../middleware/announcer');
 const {isValidObjectId} = require('mongoose');
 
 // TODO: WHOLE PROJECT DOUBLE CALLS TO DATABASE, RETHINK ABOUT BUSSNIESS LOGIC HIREACHY

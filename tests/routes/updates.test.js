@@ -5,7 +5,7 @@ const expect = require('expect');
 
 const app = require('../../index');
 
-const url = '/api/updates/';
+const url = '/api/v1/updates/';
 
 const Update = require('../../models/update');
 const {updates, populateUpdates} = require('../seed/updateSeed');

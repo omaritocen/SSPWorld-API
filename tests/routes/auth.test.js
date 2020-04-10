@@ -9,7 +9,7 @@ const app = require('../../index');
 
 const {populateUsers, users} = require('../seed/userSeed');
 
-const url = '/api/auth/';
+const url = '/api/v1/auth/';
 const User = require('../../models/user');
 
 beforeEach(populateUsers);

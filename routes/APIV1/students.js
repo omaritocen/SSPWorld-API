@@ -3,9 +3,9 @@ const _ = require('lodash');
 
 const router = express.Router();
 
-const Student = require('../models/student');
-const studentService = require('../services/studentService');
-const auth = require('../middleware/auth');
+const Student = require('../../models/student');
+const studentService = require('../../services/studentService');
+const auth = require('../../middleware/auth');
 const {isValidObjectId} = require('mongoose');
 
 router.get('/:id', auth, async (req, res) => {

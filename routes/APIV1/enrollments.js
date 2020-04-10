@@ -3,11 +3,11 @@ const _ = require('lodash');
 
 const router = express.Router();
 
-const Enrollment = require('../models/enrollment');
-const enrollmentService = require('../services/enrollmentService');
-const studentService = require('../services/studentService');
-const courseService = require('../services/courseService');
-const auth = require('../middleware/auth');
+const Enrollment = require('../../models/enrollment');
+const enrollmentService = require('../../services/enrollmentService');
+const studentService = require('../../services/studentService');
+const courseService = require('../../services/courseService');
+const auth = require('../../middleware/auth');
 const {isValidObjectId} = require('mongoose');
 
 router.post('/', auth, async (req, res) => {
