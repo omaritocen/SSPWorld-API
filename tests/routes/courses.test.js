@@ -9,9 +9,11 @@ const url = '/api/v1/courses/';
 
 const Course = require('../../models/course');
 const {courses, populateCourses} = require('../seed/courseSeed');
+const {updates, populateUpdates} = require('../seed/updateSeed');
 const {users} = require('../seed/mockedUsersSeed');
 
 beforeEach(populateCourses);
+beforeEach(populateUpdates);
 after(async done => {
     done();
 });
@@ -93,6 +95,57 @@ describe('/api/courses/', () => {
 
             expect(res.statusCode).toEqual(200);
             expect(res.body).toMatchObject(_.omit(courses[0], ['_id'])); 
+        });
+    });
+
+    describe('GET /:id/updates', () => {
+        it('should return the updates of the course', async () => {   
+            const fullUrl = url + courses[0]._id + '/updates';
+            const res = await request(app)
+                .get(fullUrl)
+                .set('x-auth-token', users[0].token);
+
+            expect(res.statusCode).toEqual(200);
+            expect(res.body[0].title).toEqual(updates[0].title);
+        });
+
+        it('should return an empty array if course has no updates', async () => {   
+            const fullUrl = url + courses[1]._id + '/updates';
+            const res = await request(app)
+                .get(fullUrl)
+                .set('x-auth-token', users[0].token);
+
+            expect(res.statusCode).toEqual(200);
+            expect(res.body).toEqual([]);
+        });
+
+        it('should return a 404 if no course with this id is found', async () => {   
+            const fullUrl = url + new ObjectID() + '/updates';
+            const res = await request(app)
+                .get(fullUrl)
+                .set('x-auth-token', users[0].token);
+
+            expect(res.statusCode).toEqual(404);
+            expect(res.body.error).toEqual('No course with this id is found.');
+        });
+
+        it('should return a 400 if invalid is sent', async () => {   
+            const fullUrl = url + '123'+ '/updates';
+            const res = await request(app)
+                .get(fullUrl)
+                .set('x-auth-token', users[0].token);
+
+            expect(res.statusCode).toEqual(400);
+            expect(res.body.error).toEqual('Invalid ID');
+        });
+
+        it('should return a 401 if no token is sent', async () => {   
+            const fullUrl = url + courses[0]._id + '/updates';
+            const res = await request(app)
+                .get(fullUrl)
+
+            expect(res.statusCode).toEqual(401);
+            expect(res.body.error).toEqual('Invalid Token');
         });
     });
 

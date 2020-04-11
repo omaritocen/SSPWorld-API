@@ -7,7 +7,7 @@ const {users} = require('../seed/mockedUsersSeed');
 const updates = [{
     _id: new ObjectID(),
     _courseId: courses[0]._id,
-    _userId: users[1]._id,
+    _userId: users[0]._id,
     title: 'first update course 1',
     body: 'the body of first update to first course',
     startDate: Date.now(),
@@ -22,8 +22,8 @@ const updates = [{
     deadline: Date.now()
 }, {
     _id: new ObjectID(),
-    _courseId: courses[1]._id,
-    _userId: users[1]._id,
+    _courseId: courses[0]._id,
+    _userId: users[2]._id,
     title: 'first update course 2',
     body: 'the body of first update to second course',
     startDate: Date.now(),

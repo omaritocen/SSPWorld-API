@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const courseController = require('../../controllers/courseController');
+const updatesController = require('../../controllers/updateController');
 
 const auth = require('../../middleware/auth');
 const admin = require('../../middleware/admin');
@@ -21,6 +22,9 @@ router
 
 router.get('/getEnrolledCourses', auth, courseController.getEnrolledCourses);
 router.post('/', [auth, admin], courseController.createCourse);
+
+router
+    .get('/:id/updates', auth, updatesController.getUpdatesByCourseId);
 
 router
     .route('/:id')

@@ -4,6 +4,7 @@ const {ObjectID} = require('mongodb');
 
 const userOneId = new ObjectID();
 const userTwoId = new ObjectID();
+const userThreeId = new ObjectID();
 
 const users = [{
     _id: userOneId,
@@ -14,7 +15,12 @@ const users = [{
     _id: userTwoId,
     email: 'jen@example.com',
     password: 'userTwoPass',
-    token: jwt.sign({_id: userOneId, role: 'admin'}, config.get('jwtPrivateKey'))
+    token: jwt.sign({_id: userTwoId, role: 'admin'}, config.get('jwtPrivateKey'))
+}, {
+    _id: userThreeId,
+    email: 'mandoob@example.com',
+    password: 'userThreePass',
+    token: jwt.sign({_id: userThreeId, role: 'repre'}, config.get('jwtPrivateKey'))
 }];
 
 module.exports = {
