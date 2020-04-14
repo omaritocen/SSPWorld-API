@@ -24,12 +24,12 @@ router.get('/getEnrolledCourses', auth, courseController.getEnrolledCourses);
 router.post('/', [auth, admin], courseController.createCourse);
 
 router
-    .get('/:id/updates', auth, updatesController.getUpdatesByCourseId);
+    .get('/:id/updates', [auth, validid], updatesController.getUpdatesByCourseId);
 
 router
     .route('/:id')
-    .get(auth, courseController.getCourseById)
-    .put([auth, admin], courseController.updateCourse)
-    .delete([auth, admin], courseController.deleteCourse);
+    .get([auth , validid], courseController.getCourseById)
+    .put([auth, admin, validid], courseController.updateCourse)
+    .delete([auth, admin, validid], courseController.deleteCourse);
 
 module.exports = router;

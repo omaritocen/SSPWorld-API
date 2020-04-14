@@ -26,9 +26,6 @@ module.exports.getStudentUpdates = async (req, res) => {
 
 module.exports.getUpdatesByCourseId = async (req, res) => {
     const courseId = req.params.id;
-
-    if (!isValidObjectId(courseId))
-        return res.status(400).send({error: 'Invalid ID'});
     
     const course = await courseService.getCourse(courseId);
     if (!course)
@@ -42,9 +39,6 @@ module.exports.getUpdatesByCourseId = async (req, res) => {
 
 module.exports.getUpdateById = async (req, res) => {
     const id = req.params.id;
-
-    if (!isValidObjectId(id))
-        return res.status(400).send({error: 'Invalid ID'});
     
     let update = await updateService.getUpdate(id);
     if (!update)
@@ -73,9 +67,6 @@ module.exports.updateUpdate = async (req, res) => {
     const id = req.params.id;
     const userId = req.user._id;
 
-    if (!isValidObjectId(id))
-        return res.status(400).send({error: 'Invalid ID'});
-
     const {error} = Update.validateUpdate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -97,8 +88,6 @@ module.exports.updateUpdate = async (req, res) => {
 module.exports.deleteUpdate = async (req, res) => {
     const id = req.params.id;
     const userId = req.user._id
-    if (!isValidObjectId(id))
-        return res.status(400).send({error: 'Invalid ID'});
     
     let update = await updateService.getUpdate(id);
 

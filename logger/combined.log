@@ -618,3 +618,18 @@
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Cast to ObjectId failed for value \"123\" at path \"_id\" for model \"Course\"","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Cast to ObjectId failed for value \"123\" at path \"_id\" for model \"Course\"","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}

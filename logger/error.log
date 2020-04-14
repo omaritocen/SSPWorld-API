@@ -125,3 +125,5 @@
 {"message":"Update is not defined","level":"error","service":"user-service"}
 {"message":"Update is not defined","level":"error","service":"user-service"}
 {"message":"Update is not defined","level":"error","service":"user-service"}
+{"message":"Cast to ObjectId failed for value \"123\" at path \"_id\" for model \"Course\"","level":"error","service":"user-service"}
+{"message":"Cast to ObjectId failed for value \"123\" at path \"_id\" for model \"Course\"","level":"error","service":"user-service"}

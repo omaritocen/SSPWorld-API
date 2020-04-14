@@ -14,9 +14,6 @@ module.exports.getAllCourses = async (req, res) => {
 module.exports.getCourseById = async (req, res) => {
     const id = req.params.id;
 
-    if (!isValidObjectId(id))
-        return res.status(400).send({ error: 'Invalid ID' });
-
     const course = await courseService.getCourse(id);
     if (!course)
         return res
@@ -70,8 +67,6 @@ module.exports.getEnrolledCourses = async (req, res) => {
 
 module.exports.updateCourse = async (req, res) => {
     const id = req.params.id;
-    if (!isValidObjectId(id))
-        return res.status(400).send({ error: 'Invalid ID' });
 
     const { error } = Course.validate(req.body);
     if (error) return res.status(400).send({ error: error.details[0].message });
@@ -94,8 +89,6 @@ module.exports.updateCourse = async (req, res) => {
 
 module.exports.deleteCourse = async (req, res) => {
     const id = req.params.id;
-    if (!isValidObjectId(id))
-        return res.status(400).send({ error: 'Invalid ID' });
 
     const course = await courseService.deleteCourse(id);
     if (!course)
