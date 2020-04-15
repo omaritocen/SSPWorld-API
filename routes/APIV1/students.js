@@ -3,10 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 const auth = require('../../middleware/auth');
+const validid = require('../../middleware/validid');
 
 const studentController = require('../../controllers/studentController');
 
-router.get('/:id', auth, studentController.getStudentById);
+router.get('/:id', [auth, validid], studentController.getStudentById);
 
 router
     .route('/')

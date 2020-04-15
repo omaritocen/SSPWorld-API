@@ -1,4 +1,3 @@
-const express = require('express');
 const _ = require('lodash');
 
 const Student = require('./../models/student');
@@ -7,9 +6,6 @@ const { isValidObjectId } = require('mongoose');
 
 module.exports.getStudentById = async (req, res) => {
     const id = req.params.id;
-    if (!isValidObjectId(id))
-        return res.status(400).send({ error: 'Invalid ID' });
-
     const student = await studentService.getStudent(id);
     if (!student)
         return res
