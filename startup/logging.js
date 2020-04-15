@@ -6,7 +6,7 @@ const logger = require('../logger/logger');
 
 module.exports = function(app) {
 
-    app.use(morgan('dev'));
+    //app.use(morgan('dev'));
 
     process.on('unhandledRejection', (ex) => {
         throw ex;
