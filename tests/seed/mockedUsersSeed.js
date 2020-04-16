@@ -7,6 +7,7 @@ const userTwoId = new ObjectID();
 const userThreeId = new ObjectID();
 const userFourId = new ObjectID();
 const userFiveId = new ObjectID();
+const userSixId = new ObjectID();
 
 const users = [{
     _id: userOneId,
@@ -33,7 +34,12 @@ const users = [{
     email: 'nobody22@example.com',
     password: 'userFivePass',
     token: jwt.sign({_id: userFiveId, role: 'student'}, config.get('jwtPrivateKey'))
-}];
+}, {
+    _id: userSixId,
+    email: 'nobody33@example.com',
+    password: 'userSixPass',
+    token: jwt.sign({_id: userSixId, role: 'student'}, config.get('jwtPrivateKey'))
+} ];
 
 module.exports = {
     users

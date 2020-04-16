@@ -11,7 +11,7 @@ const students = [
         lastName: 'Alaa',
         year: 'First',
         department: 'CCE',
-        image: ''
+        image: '',
     },
     {
         _id: new ObjectID(),
@@ -20,6 +20,15 @@ const students = [
         lastName: 'Ahmed',
         year: 'Second',
         department: 'EME',
+        image: '',
+    },
+    {
+        _id: new ObjectID(),
+        _userId: users[5]._id,
+        firstName: 'Mark',
+        lastName: 'Michael',
+        year: 'First',
+        department: 'CAE',
         image: ''
     }
 ];

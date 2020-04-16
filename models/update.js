@@ -37,7 +37,6 @@ const updateSchema = new mongoose.Schema({
 updateSchema.statics.validateUpdate = (body) => {
     const schema = Joi.object({
         _courseId: Joi.objectId().required(),
-        //_userId: Joi.objectId().required(),
         title: Joi.string().required().min(5).max(100),
         body: Joi.string().required().min(5).max(1000),
         startDate: Joi.date().required(),

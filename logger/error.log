@@ -170,3 +170,22 @@
 {"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
 {"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
 {"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/student/enrollments on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/student/updates on this server!","level":"error","service":"user-service"}
+{"message":"studentService.alreadyHasProfile is not a function","level":"error","service":"user-service"}
+{"message":"studentService.alreadyHasProfile is not a function","level":"error","service":"user-service"}
+{"message":"studentService.alreadyHasProfile is not a function","level":"error","service":"user-service"}
+{"message":"studentService.alreadyHasProfile is not a function","level":"error","service":"user-service"}
+{"message":"studentService.alreadyHasProfile is not a function","level":"error","service":"user-service"}
+{"message":"studentService.alreadyHasProfile is not a function","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/5e98e241ead3511e558b8305/enrollments on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students//courses/5e98e71b203a122b8e0fac22 on this server!","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/student/courses/5e9742ea519480444c869d7d on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/courses/5e9742ea519480444c869d7d on this server!","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property '_id' of undefined","level":"error","service":"user-service"}

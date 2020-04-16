@@ -238,9 +238,7 @@ describe('/api/courses/', () => {
             .set('x-auth-token', users[1].token);
 
             expect(res.statusCode).toEqual(200);
-            delete courses[0]._id;
-            delete res.body._id;
-            expect(res.body).toMatchObject(courses[0]);
+            expect(res.body.name).toEqual(courses[0].name);
             
             const coursess = await Course.find();
             expect(coursess.length).toBe(1);

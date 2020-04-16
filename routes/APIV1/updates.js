@@ -9,7 +9,7 @@ const validId = require('../../middleware/validid');
 
 const updateController = require('../../controllers/updateController');
 
-// TODO: THE ROUTE TO BE CHANGED TO /student/updates
+// TODO: THIS ROUTE TO BE REMOVED AFTER TESTING
 router
     .get('/', auth, updateController.getStudentUpdates);
 
