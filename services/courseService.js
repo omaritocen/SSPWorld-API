@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Course = require('../models/course');
 
-const getCourses = async () => {
-    const courses = await Course.find();
+const getCourses = async (query) => {
+    const courses = await Course.find(query);
     return courses;
 };
 

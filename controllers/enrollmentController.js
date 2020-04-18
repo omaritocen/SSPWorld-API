@@ -86,13 +86,13 @@ module.exports.deleteEnrollmentByCourseId = async (req, res) => {
     const userId = req.user._id;
 
     const course = await courseService.getCourse(courseId);
-    if (!course) return res.status(400).send('No course with this id is found');
+    if (!course) return res.status(404).send({error: 'No course with this id is found'});
 
     const studentProfile = await studentService.alreadyHasProfile(userId);
-    if (!studentProfile) return res.status(400).send('User does not have a student profile.');
+    if (!studentProfile) return res.status(400).send({error: 'User does not have a student profile'});
 
     const enrollment = await enrollmentService.deleteEnrollmentByCourseId(studentProfile._id, courseId);
-    if (!enrollment) return res.status(404).send('No enrollment for this student with this course id');
+    if (!enrollment) return res.status(404).send({error: 'No enrollment for this student with this course id'});
 
     res.send(enrollment);
 }

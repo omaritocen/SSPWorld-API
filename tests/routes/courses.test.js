@@ -18,7 +18,6 @@ after(async done => {
     done();
 });
 
-// TODO: GET /enrolledCourses is missing, Awaiting Implemenation of enrollments
 
 describe('/api/courses/', () => {
 
@@ -29,7 +28,27 @@ describe('/api/courses/', () => {
                 .set('x-auth-token', users[0].token);
                 
             expect(res.statusCode).toEqual(200);
-            expect(res.body.length).toEqual(2); 
+            expect(res.body.length).toEqual(courses.length); 
+        });
+
+        it('should return all courses with the required query and ignore wrong query', async () => {
+            const res = await request(app)
+                .get(url)
+                .query({name: 'Course1', age: 18})
+                .set('x-auth-token', users[0].token);
+
+            expect(res.statusCode).toEqual(200);
+            expect(res.body[0].creditHours).toEqual(courses[0].creditHours);
+        });
+
+        it('should return an empty array if no courses with the given query is found', async () => {
+            const res = await request(app)
+            .get(url)
+            .query({name: 'invalidName'})
+            .set('x-auth-token', users[0].token);
+
+            expect(res.statusCode).toEqual(200);
+            expect(res.body).toEqual([]);
         });
 
         it('should not return courses without access token', async () => {

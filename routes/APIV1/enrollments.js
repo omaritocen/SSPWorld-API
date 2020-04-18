@@ -19,7 +19,7 @@ router.get('/isEnrolled/:courseId', auth, enrollmentController.getEnrollmentsByC
 
 
 //TODO: I HAVE NO IDEA WHY ON EARTH I MADE THIS FUCKING THING
-// TODO: CHANGE TO DELETE courses/:id/enrollment
+// TODO: CHANGE TO DELETE student/enrollments/courses/:id
 
 router.delete('/deleteByCourseId/:courseId', auth, enrollmentController.deleteEnrollmentByCourseId);
 

@@ -7,11 +7,16 @@ const validid = require('../../middleware/validid');
 
 const studentController = require('../../controllers/studentController');
 const updateController = require('../../controllers/updateController');
+const courseController = require('../../controllers/courseController');
 const enrollmentController = require('../../controllers/enrollmentController');
 
 router.get('/updates', auth, updateController.getStudentUpdates);
 
-router.get('/enrollments/courses/:courseId',auth, enrollmentController.getEnrollmentsByCourseId);;
+router.get('/enrollments/courses/', auth, courseController.getEnrolledCourses);
+
+router.route('/enrollments/courses/:courseId')
+    .get(auth, enrollmentController.getEnrollmentsByCourseId)
+    .delete(auth, enrollmentController.deleteEnrollmentByCourseId);
 
 router.get('/enrollments', auth, enrollmentController.getEnrollmentsByStudentId);
 

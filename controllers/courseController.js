@@ -7,7 +7,9 @@ const studentService = require('../services/studentService');
 const enrollmentService = require('../services/enrollmentService');
 
 module.exports.getAllCourses = async (req, res) => {
-    const courses = await courseService.getCourses();
+    const query = req.query;
+    const courseQuery = _.pick(query, ['name', 'creditHours', 'courseType', 'term']);
+    const courses = await courseService.getCourses(courseQuery);
     res.send(courses);
 };
 
