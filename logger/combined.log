@@ -881,3 +881,67 @@
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Course validation failed: courseType: Path `courseType` is required.","level":"error","service":"user-service"}
+{"message":"Course is not defined","level":"error","service":"user-service"}
+{"message":"Course is not defined","level":"error","service":"user-service"}
+{"message":"Course is not defined","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Course validation failed: courseType: Path `courseType` is required.","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Update.validateUpdate is not a function","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}

@@ -4,24 +4,11 @@ const router = express.Router();
 
 const auth = require('../../middleware/auth');
 const validId = require('../../middleware/validid');
+const validateEnrollment = require('../../middleware/validations/validateEnrollment');
 
 const enrollmentController = require('../../controllers/enrollmentController');
 
-router.post('/', auth, enrollmentController.postEnrollment);
-
-// TODO: CHANGE SSPWORLD THEN REMOVE IT 
-
-router.get('/getEnrollmentsByStudentId/:id',auth, enrollmentController.getEnrollmentsByStudentId);
-
-// TODO:  GET student/enrollments/course remove this after changing sspworld
-
-router.get('/isEnrolled/:courseId', auth, enrollmentController.getEnrollmentsByCourseId);
-
-
-//TODO: I HAVE NO IDEA WHY ON EARTH I MADE THIS FUCKING THING
-// TODO: CHANGE TO DELETE student/enrollments/courses/:id
-
-router.delete('/deleteByCourseId/:courseId', auth, enrollmentController.deleteEnrollmentByCourseId);
+router.post('/', [auth, validateEnrollment], enrollmentController.postEnrollment);
 
 router.delete('/:id', [auth, validId], enrollmentController.deleteEnrollment);
 

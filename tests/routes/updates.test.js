@@ -200,7 +200,7 @@ describe(url, () => {
                 .send(update);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual(update.title);
+            expect(res.body.error).toEqual('"title" is required');
         });
 
         it('should return a 404 if no update is found', async() => {

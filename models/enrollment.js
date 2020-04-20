@@ -13,7 +13,7 @@ const enrollmentSchema = new mongoose.Schema({
     }
 });
 
-enrollmentSchema.statics.validateEnrollment = (body) => {
+enrollmentSchema.statics.validate = (body) => {
 
     const schema = Joi.object({
         _courseId: Joi.objectId().required()

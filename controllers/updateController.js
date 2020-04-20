@@ -5,7 +5,6 @@ const updateService = require('../services/updateService');
 const studentService = require('../services/studentService');
 const enrollmentService = require('../services/enrollmentService');
 const Update = require('../models/update');
-const {isValidObjectId} = require('mongoose');
 
 module.exports.getStudentUpdates = async (req, res) => {
     const userId = req.user._id;
@@ -50,9 +49,6 @@ module.exports.getUpdateById = async (req, res) => {
 module.exports.postUpdate = async (req, res) => {
     const userId = req.user._id;
 
-    const {error} = Update.validateUpdate(req.body);
-    if (error) return res.status(400).send({error: error.details[0].message});
-
     const course = await courseService.getCourse(req.body._courseId);
     if (!course) return res.status(400).send({error: 'There is no course with this id is found'});
 
@@ -66,9 +62,6 @@ module.exports.postUpdate = async (req, res) => {
 module.exports.updateUpdate = async (req, res) => {
     const id = req.params.id;
     const userId = req.user._id;
-
-    const {error} = Update.validateUpdate(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
 
     let update = await updateService.getUpdate(id);
 

@@ -26,8 +26,7 @@ module.exports.getCourseById = async (req, res) => {
 };
 
 module.exports.createCourse = async (req, res) => {
-    const { error } = Course.validate(req.body);
-    if (error) return res.status(400).send({ error: error.details[0].message });
+
     let course = new Course(
         _.pick(req.body, ['name', 'creditHours', 'courseType', 'term'])
     );
@@ -69,9 +68,6 @@ module.exports.getEnrolledCourses = async (req, res) => {
 
 module.exports.updateCourse = async (req, res) => {
     const id = req.params.id;
-
-    const { error } = Course.validate(req.body);
-    if (error) return res.status(400).send({ error: error.details[0].message });
 
     // TODO: CHECK IF THERE IS A WAY TO SEE IF THE ERROR IS NOT ID ONLY INVOLVED
     const body = _.pick(req.body, [

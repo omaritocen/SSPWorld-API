@@ -101,22 +101,6 @@ describe('/api/courses/', () => {
         });
     });
 
-    describe('GET /getCourseByCourseName', () => {
-        const subUrl = 'getCourseByCourseName';
-        it('should return the course if course name is sent', async() => {
-            const name = courses[0].name;
-            const requestUrl = url + subUrl;
-            const res = await request(app)
-                .get(requestUrl)
-                .query({courseName: name})
-                .set('x-auth-token', users[0].token);
-                
-
-            expect(res.statusCode).toEqual(200);
-            expect(res.body).toMatchObject(_.omit(courses[0], ['_id'])); 
-        });
-    });
-
     describe('GET /:id/updates', () => {
         it('should return the updates of the course', async () => {   
             const fullUrl = url + courses[0]._id + '/updates';

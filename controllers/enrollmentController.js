@@ -10,9 +10,6 @@ module.exports.postEnrollment = async (req, res) => {
     const userId = req.user._id;
     const courseId = req.body._courseId;
 
-    const { error } = Enrollment.validateEnrollment(req.body);
-    if (error) return res.status(400).send({ error: error.details[0].message });
-
     const studentProfile = await studentService.alreadyHasProfile(userId);
     if (!studentProfile)
         return res
