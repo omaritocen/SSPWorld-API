@@ -11,7 +11,6 @@ const auth = require('./auth');
 router.use('/courses', courses);
 router.use('/updates', updates);
 router.use('/students', students);
-router.use('/enrollments', enrollments);
 router.use('/users', users);
 router.use('/auth', auth);
 

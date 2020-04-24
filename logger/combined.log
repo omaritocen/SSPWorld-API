@@ -945,3 +945,76 @@
 {"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
 {"message":"Student.validateStudent is not a function","level":"error","service":"user-service"}
 {"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments on this server!","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments/ on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments/ on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments/ on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments/ on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments/5ea21c84746b094c33a32b4c on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments/123 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments/5ea21c86746b094c33a32fed on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments/5ea21c84746b094c33a32b4c on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/enrollments/5ea21c84746b094c33a32b4c on this server!","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21ec75642a84eafa88cbf on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21ec75642a84eafa88cbf on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21ec75642a84eafa88cbf on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21eca5642a84eafa89110 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21ec75642a84eafa88cbf on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments5ea21ec75642a84eafa88ccd on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments123 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments5ea21ecb5642a84eafa8920b on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments5ea21ec75642a84eafa88ccd on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments5ea21ec75642a84eafa88ccd on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21ec75642a84eafa88cbf on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21ec75642a84eafa88cbf on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21ec75642a84eafa88cbf on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21ecb5642a84eafa892c6 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21ec75642a84eafa88cbf on this server!","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments5ea21faeadbf8b4f92de945a on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments123 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments5ea21fb0adbf8b4f92de9998 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments5ea21faeadbf8b4f92de945a on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments5ea21faeadbf8b4f92de945a on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21faeadbf8b4f92de944c on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21faeadbf8b4f92de944c on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21faeadbf8b4f92de944c on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21fb0adbf8b4f92de9a53 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollmentsenrollments/courses/5ea21faeadbf8b4f92de944c on this server!","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea21fdfd4bcc54fd92da9b8 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea21fdfd4bcc54fd92da9b8 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea21fdfd4bcc54fd92da9b8 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea21fe3d4bcc54fd92dafbf on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea21fdfd4bcc54fd92da9b8 on this server!","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea2232e69e5c65340770970 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea2232e69e5c65340770970 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea2232e69e5c65340770970 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea2233169e5c65340770f77 on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments/enrollments/courses/5ea2232e69e5c65340770970 on this server!","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments//enrollments on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments//enrollments on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments//enrollments on this server!","level":"error","service":"user-service"}
+{"message":"Can't find /api/v1/students/enrollments//enrollments on this server!","level":"error","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}
+{"message":"Connected successfully to MongoDB","level":"info","service":"user-service"}

@@ -10,13 +10,23 @@ const validateUpdate = require('../../middleware/validations/validateUpdate');
 
 const updateController = require('../../controllers/updateController');
 
+// GET /updates/:id
+// PUT /updates/:id
+// DELETE /updates/:id
 router
     .route('/:id')
-    .get([auth, validId] , updateController.getUpdateById)
-    .put([auth, announcer, validId, validateUpdate], updateController.updateUpdate)
+    .get([auth, validId], updateController.getUpdateById)
+    .put(
+        [auth, announcer, validId, validateUpdate],
+        updateController.updateUpdate
+    )
     .delete([auth, announcer, validId], updateController.deleteUpdate);
 
-router
-    .post('/', [auth, announcer, validateUpdate], updateController.postUpdate);
+// POST /updates
+router.post(
+    '/',
+    [auth, announcer, validateUpdate],
+    updateController.postUpdate
+);
 
 module.exports = router;
