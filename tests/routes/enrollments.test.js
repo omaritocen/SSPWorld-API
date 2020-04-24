@@ -43,7 +43,7 @@ describe(url, () => {
                 .set('x-auth-token', users[4].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'User does not have a student profile'
             );
         });
@@ -123,7 +123,7 @@ describe(url, () => {
                 .set('x-auth-token', users[5].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'No enrollment for this student with this course id'
             );
         });
@@ -134,7 +134,7 @@ describe(url, () => {
                 .set('x-auth-token', users[4].token);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'User does not have a student profile'
             );
         });
@@ -145,7 +145,7 @@ describe(url, () => {
                 .set('x-auth-token', users[5].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual('No course with this id is found');
+            expect(res.body.message).toEqual('No course with this id is found');
         });
 
         it('should return 401 if no access token is sent', async () => {
@@ -179,7 +179,7 @@ describe(url, () => {
                 .send({_courseId: courses[0]._id});
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('User is already enrolled in this course');
+            expect(res.body.message).toEqual('User is already enrolled in this course');
         });
 
         it('should not post a new enrollment with invalid course id', async () => {
@@ -188,8 +188,8 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token)
                 .send({ _courseId: new ObjectID() });
 
-            expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('No course with this ID is found');
+            expect(res.statusCode).toEqual(404);
+            expect(res.body.message).toEqual('No course with this ID is found.');
         });
 
         it('should return 400 if invalid body is sent', async () => {
@@ -198,7 +198,7 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('"_courseId" is required');
+            expect(res.body.message).toEqual('"_courseId" is required');
         });
 
         it('should return 401 if no access token is sent', async () => {
@@ -239,7 +239,7 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual('No enrollment with this id is found');
+            expect(res.body.message).toEqual('No enrollment with this id is found');
         });
 
         it('should return 401 when deleting an enrollment that belongs to somebody else', async () => {
@@ -248,7 +248,7 @@ describe(url, () => {
                 .set('x-auth-token', users[3].token);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Access Denied');
+            expect(res.body.message).toEqual('Access Denied');
         });
 
         it('should return 401 if no access token is sent', async () => {
@@ -280,7 +280,7 @@ describe(url, () => {
                 .set('x-auth-token', users[5].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'No enrollment for this student with this course id'
             );
         });
@@ -291,7 +291,7 @@ describe(url, () => {
                 .set('x-auth-token', users[4].token);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'User does not have a student profile'
             );
         });
@@ -302,7 +302,7 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual('No course with this id is found');
+            expect(res.body.message).toEqual('No course with this id is found');
         });
 
         it('should return 401 if no access token is sent', async () => {
