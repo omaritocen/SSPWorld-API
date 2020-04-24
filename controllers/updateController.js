@@ -1,5 +1,6 @@
 const _ = require('lodash');
 
+const AppError = require('../utils/appError');
 const courseService = require('../services/courseService');
 const updateService = require('../services/updateService');
 const studentService = require('../services/studentService');
@@ -23,12 +24,12 @@ module.exports.getStudentUpdates = async (req, res) => {
     res.send(updates);
 };
 
-module.exports.getUpdatesByCourseId = async (req, res) => {
+module.exports.getUpdatesByCourseId = async (req, res, next) => {
     const courseId = req.params.id;
     
     const course = await courseService.getCourse(courseId);
     if (!course)
-        return res.status(404).send({error: 'No course with this id is found.'});
+        return next(new AppError('No course with this id is found.', 404));
 
     const updates = await updateService.getUpdatesByCourseId(courseId);
     

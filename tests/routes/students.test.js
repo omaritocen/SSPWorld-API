@@ -52,7 +52,7 @@ describe(url, () => {
             const res = await request(app).get(url);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
 
         it('should return 404 when asking for a profile for another role', async () => {
@@ -95,7 +95,7 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('Invalid ID');
+            expect(res.body.message).toEqual('Invalid ID');
         });
 
         it('should return 401 if no access token is sent', async () => {
@@ -103,7 +103,7 @@ describe(url, () => {
             const res = await request(app).get(url + id);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 
@@ -185,7 +185,7 @@ describe(url, () => {
             const res = await request(app).post(url).send(student);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 
@@ -257,7 +257,7 @@ describe(url, () => {
             const res = await request(app).put(url).send(student);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 });

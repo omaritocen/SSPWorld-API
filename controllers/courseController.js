@@ -1,31 +1,30 @@
 const _ = require('lodash');
 
-const { isValidObjectId } = require('mongoose');
+const AppError = require('../utils/appError');
+const express = require('express');
 const Course = require('../models/course');
 const courseService = require('../services/courseService');
 const studentService = require('../services/studentService');
 const enrollmentService = require('../services/enrollmentService');
 
-module.exports.getAllCourses = async (req, res) => {
+module.exports.getAllCourses = async (req, res, next) => {
     const query = req.query;
     const courseQuery = _.pick(query, ['name', 'creditHours', 'courseType', 'term']);
     const courses = await courseService.getCourses(courseQuery);
     res.send(courses);
 };
 
-module.exports.getCourseById = async (req, res) => {
+module.exports.getCourseById = async (req, res, next) => {
     const id = req.params.id;
 
     const course = await courseService.getCourse(id);
     if (!course)
-        return res
-            .status(404)
-            .send({ error: 'No course with this ID is found.' });
+        return next(new AppError('No course with this ID is found.', 404));
 
     res.send(course);
 };
 
-module.exports.createCourse = async (req, res) => {
+module.exports.createCourse = async (req, res, next) => {
 
     let course = new Course(
         _.pick(req.body, ['name', 'creditHours', 'courseType', 'term'])
@@ -34,30 +33,27 @@ module.exports.createCourse = async (req, res) => {
     res.status(201).send(course);
 };
 
-module.exports.getCourseByCourseName = async (req, res) => {
+module.exports.getCourseByCourseName = async (req, res, next) => {
     const courseName = req.query.courseName;
 
     const course = await courseService.getCourseByCourseName(courseName);
     if (!course)
-        return res
-            .status(404)
-            .send({ error: 'No course with this name is found' });
+        return next(new AppError('No course with this name is found', 404));
 
     res.send(course);
 };
 
-module.exports.getEnrolledCourses = async (req, res) => {
+module.exports.getEnrolledCourses = async (req, res, next) => {
     const userId = req.user._id;
 
     const student = await studentService.alreadyHasProfile(userId);
     if (!student)
-        return res
-            .status(400)
-            .send({ error: 'User does not have a student profile' });
+        return next(new AppError('User does not have a student profile', 400));
 
     const enrollments = await enrollmentService.getEnrollmentsByStudentId(
         student._id
     );
+
     if (!enrollments) return res.send([]); // Debatable if an empty array or a bad request should be sent;
 
     const coursesIds = enrollments.map((e) => e._courseId);
@@ -66,7 +62,7 @@ module.exports.getEnrolledCourses = async (req, res) => {
     res.send(courses);
 };
 
-module.exports.updateCourse = async (req, res) => {
+module.exports.updateCourse = async (req, res, next) => {
     const id = req.params.id;
 
     // TODO: CHECK IF THERE IS A WAY TO SEE IF THE ERROR IS NOT ID ONLY INVOLVED
@@ -78,21 +74,17 @@ module.exports.updateCourse = async (req, res) => {
     ]);
     const course = await courseService.updateCourse(id, body);
     if (!course)
-        return res
-            .status(404)
-            .send({ error: 'No course with this ID is found.' });
+        return next(new AppError('No course with this ID is found.', 404));
 
     res.send(course);
 };
 
-module.exports.deleteCourse = async (req, res) => {
+module.exports.deleteCourse = async (req, res, next) => {
     const id = req.params.id;
 
     const course = await courseService.deleteCourse(id);
     if (!course)
-        return res
-            .status(404)
-            .send({ error: 'No course with this ID is found.' });
+        return next(new AppError('No course with this ID is found.', 404));
 
     res.send(course);
 };

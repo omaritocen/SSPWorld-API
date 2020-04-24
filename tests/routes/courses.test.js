@@ -56,7 +56,7 @@ describe('/api/courses/', () => {
                 .get(url);
                 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toBe('Invalid Token');
+            expect(res.body.message).toBe('Invalid Token');
         });
 
     });
@@ -77,7 +77,7 @@ describe('/api/courses/', () => {
                 .get(url + id);
             
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toBe('Invalid Token');  
+            expect(res.body.message).toBe('Invalid Token');  
         });
 
         it('should return a 400 if invalid id is sent', async() => {
@@ -87,7 +87,7 @@ describe('/api/courses/', () => {
                 .set('x-auth-token', users[0].token);
             
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toBe('Invalid ID');  
+            expect(res.body.message).toBe('Invalid ID');  
         });
 
         it('should return a 404 if no course is found', async() => {
@@ -97,7 +97,7 @@ describe('/api/courses/', () => {
                 .set('x-auth-token', users[0].token);
             
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toBe('No course with this ID is found.');  
+            expect(res.body.message).toBe('No course with this ID is found.');  
         });
     });
 
@@ -129,7 +129,7 @@ describe('/api/courses/', () => {
                 .set('x-auth-token', users[0].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual('No course with this id is found.');
+            expect(res.body.message).toEqual('No course with this id is found.');
         });
 
         it('should return a 400 if invalid is sent', async () => {   
@@ -139,7 +139,7 @@ describe('/api/courses/', () => {
                 .set('x-auth-token', users[0].token);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('Invalid ID');
+            expect(res.body.message).toEqual('Invalid ID');
         });
 
         it('should return a 401 if no token is sent', async () => {   
@@ -148,7 +148,7 @@ describe('/api/courses/', () => {
                 .get(fullUrl)
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 
@@ -207,7 +207,7 @@ describe('/api/courses/', () => {
             .send(body);
 
             expect(res.statusCode).toEqual(403);
-            expect(res.body.error).toBe('Access Denied');
+            expect(res.body.message).toBe('Access Denied');
 
             const courses = await Course.find();
             expect(courses.length).toBe(2);  
@@ -226,7 +226,7 @@ describe('/api/courses/', () => {
             .send(body);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toBe('Invalid Token');
+            expect(res.body.message).toBe('Invalid Token');
 
             const courses = await Course.find();
             expect(courses.length).toBe(2);  
@@ -253,7 +253,7 @@ describe('/api/courses/', () => {
                 .delete(url + id);
             
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toBe('Invalid Token');  
+            expect(res.body.message).toBe('Invalid Token');  
         });
 
         it('should return a 400 if invalid id is sent', async () => {
@@ -275,7 +275,7 @@ describe('/api/courses/', () => {
             .set('x-auth-token', users[1].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toBe('No course with this ID is found.');  
+            expect(res.body.message).toBe('No course with this ID is found.');  
             
             const coursess = await Course.find();
             expect(coursess.length).toBe(2);
@@ -288,7 +288,7 @@ describe('/api/courses/', () => {
             .set('x-auth-token', users[0].token);
 
             expect(res.statusCode).toEqual(403);
-            expect(res.body.error).toBe('Access Denied');
+            expect(res.body.message).toBe('Access Denied');
             
             const coursess = await Course.find();
             expect(coursess.length).toBe(2);
@@ -329,7 +329,8 @@ describe('/api/courses/', () => {
                 .send(body);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toBeTruthy();
+            expect(res.body.message).toEqual('"name" is required');
+
             const course = await Course.findById(id);
             expect(course.courseType).toEqual('Humanity');
 
@@ -349,7 +350,7 @@ describe('/api/courses/', () => {
                 .send(body);
             
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toBe('Invalid Token');  
+            expect(res.body.message).toBe('Invalid Token');  
         });
 
         it('should return 403 when not admin', async () => {
@@ -367,7 +368,7 @@ describe('/api/courses/', () => {
             .send(body);
 
             expect(res.statusCode).toEqual(403);
-            expect(res.body.error).toBe('Access Denied');
+            expect(res.body.message).toBe('Access Denied');
             
             const coursess = await Course.find();
             expect(coursess.length).toBe(2);
@@ -408,7 +409,7 @@ describe('/api/courses/', () => {
             .send(body);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toBe('No course with this ID is found.');  
+            expect(res.body.message).toBe('No course with this ID is found.');  
             
             const coursess = await Course.find();
             expect(coursess.length).toBe(2);

@@ -62,7 +62,7 @@ describe(url, () => {
             const res = await request(app).get(url);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 
@@ -93,7 +93,7 @@ describe(url, () => {
                 .set('x-auth-token', users[4].token);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'User does not have a student profile'
             );
         });
@@ -102,7 +102,7 @@ describe(url, () => {
             const res = await request(app).get(subUrl);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 
@@ -152,7 +152,7 @@ describe(url, () => {
             const res = await request(app).get(subUrl + courses[0]._id);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 
@@ -207,7 +207,7 @@ describe(url, () => {
                 .send({ _courseId: courses[0]._id });
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 
@@ -230,7 +230,7 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('Invalid ID');
+            expect(res.body.message).toEqual('Invalid ID');
         });
 
         it('should return a 404 if no enrollment is found', async () => {
@@ -255,7 +255,7 @@ describe(url, () => {
             const res = await request(app).delete(url + enrollments[0]._id);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 
@@ -309,7 +309,7 @@ describe(url, () => {
             const res = await request(app).delete(subUrl + courses[0]._id);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
     });
 });

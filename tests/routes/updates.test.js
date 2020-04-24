@@ -39,7 +39,7 @@ describe(url, () => {
                 .get(url + id);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         })
 
         it('should return a 404 if no update is found', async () => {
@@ -59,7 +59,7 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token);
         
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('Invalid ID');
+            expect(res.body.message).toEqual('Invalid ID');
         });
     });
 
@@ -140,7 +140,7 @@ describe(url, () => {
                 .send(update);
 
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
 
         });
 
@@ -159,7 +159,7 @@ describe(url, () => {
                 .send(update);
 
             expect(res.statusCode).toEqual(403);
-            expect(res.body.error).toEqual('Access Denied');
+            expect(res.body.message).toEqual('Access Denied');
         });     
     });
 
@@ -238,7 +238,7 @@ describe(url, () => {
                 .send(update);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('Invalid ID');
+            expect(res.body.message).toEqual('Invalid ID');
         });
 
         it('should return a 403 if update an update by other user', async() => {
@@ -289,7 +289,7 @@ describe(url, () => {
                 .set('x-auth-token', users[2].token);
             
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('Invalid ID');
+            expect(res.body.message).toEqual('Invalid ID');
         });
 
         it('should return a 401 if no access token', async () => {
@@ -298,7 +298,7 @@ describe(url, () => {
                 .get(url + id)
             
             expect(res.statusCode).toEqual(401);
-            expect(res.body.error).toEqual('Invalid Token');
+            expect(res.body.message).toEqual('Invalid Token');
         });
 
         // it('should return a 403 if other user attempted to delete', async () => {
