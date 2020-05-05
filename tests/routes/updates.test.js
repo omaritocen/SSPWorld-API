@@ -49,7 +49,7 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token);
             
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual('No update with this ID is found');
+            expect(res.body.message).toEqual('No update with this ID is found');
         });
 
         it('should retuen a 400 if invalid is sent', async () => {
@@ -102,7 +102,7 @@ describe(url, () => {
                 .send(update);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('\"body\" is required');
+            expect(res.body.message).toEqual('"body" is required');
 
             const updates = await Update.find();
             expect(updates.length).toEqual(3);
@@ -123,7 +123,7 @@ describe(url, () => {
                 .send(update);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('There is no course with this id is found');
+            expect(res.body.message).toEqual('There is no course with this id is found');
         });
 
         it('should return a 401 if no access token is sent', async () => {
@@ -200,7 +200,7 @@ describe(url, () => {
                 .send(update);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('"title" is required');
+            expect(res.body.message).toEqual('"title" is required');
         });
 
         it('should return a 404 if no update is found', async() => {
@@ -219,7 +219,7 @@ describe(url, () => {
                 .send(update);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual('No update with this ID is found');
+            expect(res.body.message).toEqual('No update with this ID is found');
         });
 
         it('should return a 400 if invalid id is sent', async() => {
@@ -257,7 +257,7 @@ describe(url, () => {
                 .send(update);
 
             expect(res.statusCode).toEqual(403);
-            expect(res.body.error).toEqual('Access denied');
+            expect(res.body.message).toEqual('Access denied');
         });
     });
 
@@ -279,7 +279,7 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token);
             
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual('No update with this ID is found');
+            expect(res.body.message).toEqual('No update with this ID is found');
         });
 
         it('should return a 400 if invalid id is sent', async () => {
@@ -308,7 +308,7 @@ describe(url, () => {
         //         .set('x-auth-token', users[2].token);
             
         //     expect(res.statusCode).toEqual(403);
-        //     expect(res.body.error).toEqual('Access denied');
+        //     expect(res.body.message).toEqual('Access denied');
         // });
     });
 

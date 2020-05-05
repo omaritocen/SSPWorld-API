@@ -3,11 +3,13 @@ const express = require('express');
 const router = express.Router({ mergeParams: true });
 
 const auth = require('../../middleware/auth');
-const validId = require('../../middleware/validid');
+const validid = require('../../middleware/validid');
 const validateEnrollment = require('../../middleware/validations/validateEnrollment');
 
 const enrollmentController = require('../../controllers/enrollmentController');
 const courseController = require('../../controllers/courseController');
+
+router.param('id', validid);
 
 // GET /students/enrollments/
 // POST /students/enrollments/
@@ -16,7 +18,7 @@ router
     .post('/', [auth, validateEnrollment], enrollmentController.postEnrollment);
 
 // DELETE /students/enrollments/:id
-router.delete('/:id', [auth, validId], enrollmentController.deleteEnrollment);
+router.delete('/:id', auth, enrollmentController.deleteEnrollment);
 
 // GET /students/enrollments/courses/
 router.get('/courses/', auth, courseController.getEnrolledCourses);

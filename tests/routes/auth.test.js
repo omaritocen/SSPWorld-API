@@ -49,7 +49,7 @@ describe(url, () => {
                 .send(body);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('Wrong ID or Password.');
+            expect(res.body.message).toEqual('Wrong ID or Password.');
         });
 
         it('should not login user with invalid body', async () => {
@@ -62,7 +62,7 @@ describe(url, () => {
                 .send(body);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('\"password\" is required');
+            expect(res.body.message).toEqual('\"password\" is required');
         });
     });
 });

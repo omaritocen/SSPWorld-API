@@ -52,7 +52,7 @@ describe(url , () => {
             .send(body);
         
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('A User with the same SSP ID already exists.');
+            expect(res.body.message).toEqual('A User with the same SSP ID already exists.');
             
             const user = await User.findOne({email: body.email});
             expect(user).toBeFalsy();
@@ -71,7 +71,7 @@ describe(url , () => {
             .send(body);
         
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('A User with the same email already exists.');
+            expect(res.body.message).toEqual('A User with the same email already exists.');
             
             const user = await User.findOne({sspID: body.sspID});
             expect(user).toBeFalsy();
@@ -88,7 +88,7 @@ describe(url , () => {
             .send(body);
         
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('\"password\" is required');
+            expect(res.body.message).toEqual('\"password\" is required');
             
             const urs = await User.find();
             expect(urs.length).toEqual(2);            
@@ -108,7 +108,7 @@ describe(url , () => {
                 .send(body);
             
                 expect(res.statusCode).toEqual(400);
-                expect(res.body.error).toEqual('\"role\" is not allowed');
+                expect(res.body.message).toEqual('\"role\" is not allowed');
                 
                 const urs = await User.find();
                 expect(urs.length).toEqual(2); 

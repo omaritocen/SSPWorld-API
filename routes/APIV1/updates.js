@@ -5,22 +5,24 @@ const router = express.Router();
 
 const auth = require('../../middleware/auth');
 const announcer = require('../../middleware/announcer');
-const validId = require('../../middleware/validid');
+const validid = require('../../middleware/validid');
 const validateUpdate = require('../../middleware/validations/validateUpdate');
 
 const updateController = require('../../controllers/updateController');
+
+router.param('id', validid);
 
 // GET /updates/:id
 // PUT /updates/:id
 // DELETE /updates/:id
 router
     .route('/:id')
-    .get([auth, validId], updateController.getUpdateById)
+    .get(auth, updateController.getUpdateById)
     .put(
-        [auth, announcer, validId, validateUpdate],
+        [auth, announcer, validateUpdate],
         updateController.updateUpdate
     )
-    .delete([auth, announcer, validId], updateController.deleteUpdate);
+    .delete([auth, announcer], updateController.deleteUpdate);
 
 // POST /updates
 router.post(

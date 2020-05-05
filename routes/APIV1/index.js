@@ -4,7 +4,6 @@ const router = express.Router();
 const courses = require('./courses');
 const updates = require('./updates');
 const students = require('./students');
-const enrollments = require('./enrollments');
 const users = require('./users');
 const auth = require('./auth');
 

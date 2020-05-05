@@ -37,7 +37,6 @@ const studentSchema = new mongoose.Schema({
 
 studentSchema.statics.validate = (body) => {
     const schema = Joi.object({
-        _userId: Joi.objectId().required(),
         firstName: Joi.string().required().min(3).max(15),
         lastName: Joi.string().required().min(3).max(15),
         image: Joi.string().optional().allow(''),

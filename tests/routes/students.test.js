@@ -43,7 +43,7 @@ describe(url, () => {
                 .set('x-auth-token', users[4].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'No student profile is found for this user id'
             );
         });
@@ -61,7 +61,7 @@ describe(url, () => {
                 .set('x-auth-token', users[1].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'No student profile is found for this user id'
             );
         });
@@ -85,7 +85,7 @@ describe(url, () => {
                 .set('x-auth-token', users[0].token);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual('No student with this id is found');
+            expect(res.body.message).toEqual('No student with this id is found');
         });
 
         it('should return a 400 if invalid id is sent', async () => {
@@ -151,7 +151,7 @@ describe(url, () => {
                 .send(student);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'User already has a student profile.'
             );
         });
@@ -170,7 +170,7 @@ describe(url, () => {
                 .send(student);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('"lastName" is required');
+            expect(res.body.message).toEqual('"lastName" is required');
         });
 
         it('should return a 401 if no access token is sent', async () => {
@@ -222,7 +222,7 @@ describe(url, () => {
                 .send(student);
 
             expect(res.statusCode).toEqual(400);
-            expect(res.body.error).toEqual('"lastName" is required');
+            expect(res.body.message).toEqual('"lastName" is required');
         });
 
         it('should return a 404 if user has no profile', async () => {
@@ -240,7 +240,7 @@ describe(url, () => {
                 .send(student);
 
             expect(res.statusCode).toEqual(404);
-            expect(res.body.error).toEqual(
+            expect(res.body.message).toEqual(
                 'No student profile is found for this user id'
             );
         });
