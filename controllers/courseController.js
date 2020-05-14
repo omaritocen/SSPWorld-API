@@ -1,6 +1,7 @@
 const _ = require('lodash');
 
 const AppError = require('../utils/appError');
+const QueryUtils = require('../utils/queryUtils');
 const express = require('express');
 const Course = require('../models/course');
 const courseService = require('../services/courseService');
@@ -8,9 +9,10 @@ const studentService = require('../services/studentService');
 const enrollmentService = require('../services/enrollmentService');
 
 module.exports.getAllCourses = async (req, res, next) => {
-    const query = req.query;
-    const courseQuery = _.pick(query, ['name', 'creditHours', 'courseType', 'term']);
-    const courses = await courseService.getCourses(courseQuery);
+    
+    const queryUtils = new QueryUtils(Course.find(), req.query).filter().sort();
+    const courses = await queryUtils.query;
+
     res.send(courses);
 };
 
@@ -25,7 +27,6 @@ module.exports.getCourseById = async (req, res, next) => {
 };
 
 module.exports.createCourse = async (req, res, next) => {
-
     let course = new Course(
         _.pick(req.body, ['name', 'creditHours', 'courseType', 'term'])
     );

@@ -72,3 +72,31 @@
 {"message":"next is not defined","level":"error","service":"user-service"}
 {"message":"next is not defined","level":"error","service":"user-service"}
 {"message":"next is not defined","level":"error","service":"user-service"}
+{"message":"QueryUtils is not a constructor","level":"error","service":"user-service"}
+{"message":"QueryUtils is not a constructor","level":"error","service":"user-service"}
+{"message":"QueryUtils is not a constructor","level":"error","service":"user-service"}
+{"message":"Assignment to constant variable.","level":"error","service":"user-service"}
+{"message":"Assignment to constant variable.","level":"error","service":"user-service"}
+{"message":"Assignment to constant variable.","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"Cannot read property 'query' of undefined","level":"error","service":"user-service"}
+{"message":"this.query.sort.split is not a function","level":"error","service":"user-service"}
+{"message":"this.query is not a function","level":"error","service":"user-service"}
+{"message":"this.query is not a function","level":"error","service":"user-service"}
+{"message":"req is not defined","level":"error","service":"user-service"}
+{"message":"req is not defined","level":"error","service":"user-service"}
+{"message":"req is not defined","level":"error","service":"user-service"}
+{"message":"req is not defined","level":"error","service":"user-service"}
